@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destiny International Worship Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2a5b8c;
+            --secondary: #c9a145;
+            --accent: #8c1c13;
+            --light: #f8f5f0;
+            --dark: #1a2a3a;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary), #1a3a5a);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            color: var(--secondary);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.9)), url('https://images.unsplash.com/photo-1515895309288-a3815ab7cf81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 60px;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid var(--secondary);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+
+        /* Main Content */
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .page-title p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1508357941504-9d7e0a0a7a0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        /* Ministries Section */
+        .ministries-section {
+            margin-bottom: 80px;
+        }
+
+        .ministries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .ministry-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .ministry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .ministry-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ministry-info {
+            padding: 25px;
+        }
+
+        .ministry-info h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .ministry-info p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .ministry-link {
+            display: inline-block;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .ministry-link:hover {
+            color: var(--primary);
+        }
+
+        /* Events Section */
+        .events-section {
+            margin-bottom: 80px;
+        }
+
+        .events-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .event-card {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .event-date {
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            padding: 15px 10px;
+        }
+
+        .event-date .day {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .event-date .month {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .event-details h4 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .event-details .time {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section, .about-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(42, 91, 140, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .submit-btn:hover {
+            background: #1a3a5a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(42, 91, 140, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .info-icon i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .info-content h4 {
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .info-content p, .info-content a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .info-content a:hover {
+            color: var(--primary);
+        }
+
+        .service-times {
+            margin-top: 20px;
+        }
+
+        .service-time {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        /* Map Section */
+        .map-section {
+            margin-bottom: 80px;
+        }
+
+        .map-container {
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background-color: var(--light-gray);
+        }
+
+        .map-placeholder {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e0e7ff 0%, #d1e0ff 100%);
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* Staff Section */
+        .staff-section {
+            margin-bottom: 80px;
+        }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .staff-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .staff-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .staff-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .staff-info {
+            padding: 25px;
+        }
+
+        .staff-info h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .staff-info p.position {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .staff-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .staff-contact {
+            display: flex;
+            gap: 15px;
+        }
+
+        .staff-contact a {
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .staff-contact a:hover {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            border-radius: 10px 0 0 10px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: -5px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .admin-content {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 350px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 999;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .admin-header h3 {
+            color: var(--primary);
+        }
+
+        .close-admin {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .admin-messages {
+            margin-bottom: 30px;
+        }
+
+        .message-item {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .message-item h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .message-item .meta {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .message-item p {
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 0 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Destiny International Worship Center</h1>
+                    <p>Experience God Transforming Power</p>
+                </div>
+            </div>
+                
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Welcome to Destiny International</h2>
+            <p>A vibrant community of faith dedicated to serving God and transforming lives through the power of the Gospel.</p>
+            <a href="#contact" class="cta-button">Join Us This Sunday</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <div class="container">
+        <section class="about-section" id="about">
+            <div class="about-image"></div>
+            <div class="about-content">
+                <h3>Our Mission & Vision</h3>
+                <p>Destiny International Worship Center is a Bible-based, Spirit-filled church dedicated to fulfilling the Great Commission. We exist to bring people into a life-changing relationship with Jesus Christ and to equip believers for their God-given purpose.</p>
+                <p>Founded in 2005 by Apostle Olu-Bumie Syl-Macfoy, our church has grown into a diverse community representing over 20 nations. We believe in the transforming power of God's love and the authority of His Word.</p>
+                <p>Our vision is to see lives transformed, communities impacted, and nations changed through the power of the Gospel. We accomplish this through passionate worship, biblical teaching, and compassionate outreach.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Ministries Section -->
+    <div class="container">
+        <div class="page-title" id="ministries">
+            <h2>Our Ministries</h2>
+            <p>Discover opportunities to grow, serve, and connect with others in our church family.</p>
+            <div class="divider"></div>
+        </div>
+        
+        <section class="ministries-section">
+            <div class="ministries-grid">
+                <div class="ministry-card">
+                    <div class="ministry-img" style="background-image: url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="ministry-info">
+                        <h4>Children's Ministry</h4>
+                        <p>Engaging programs for children ages 2-12 where they learn about God's love through Bible stories, worship, and fun activities.</p>
+                        <a href="#" class="ministry-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="ministry-card">
+                    <div class="ministry-img" style="background-image: url('https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');"></div>
+                    <div class="ministry-info">
+                        <h4>Youth & Young Adults</h4>
+                        <p>A dynamic community for youth and young adults to grow in faith, build relationships, and discover their purpose in Christ.</p>
+                        <a href="#" class="ministry-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="ministry-card">
+                    <div class="ministry-img" style="background-image: url('https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');"></div>
+                    <div class="ministry-info">
+                        <h4>Men's Fellowship</h4>
+                        <p>Building godly men through Bible study, accountability, and service opportunities in the church and community.</p>
+                        <a href="#" class="ministry-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="ministry-card">
+                    <div class="ministry-img" style="background-image: url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="ministry-info">
+                        <h4>Women of Destiny</h4>
+                        <p>Empowering women to grow spiritually, connect authentically, and impact their world for Christ through biblical teaching and fellowship.</p>
+                        <a href="#" class="ministry-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Events Section -->
+    <div class="container">
+        <div class="page-title" id="events">
+            <h2>Upcoming Events</h2>
+            <p>Join us for worship, fellowship, and special events throughout the year.</p>
+            <div class="divider"></div>
+        </div>
+        
+        <section class="events-section">
+            <div class="events-list">
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="day">15</div>
+                        <div class="month">July</div>
+                    </div>
+                    <div class="event-details">
+                        <h4>Annual Summer Conference</h4>
+                        <span class="time"><i class="fas fa-clock"></i> 9:00 AM - 4:00 PM</span>
+                        <p>A three-day conference with powerful worship and teaching on "Living with Purpose". Featuring guest speakers from around the world.</p>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="day">22</div>
+                        <div class="month">July</div>
+                    </div>
+                    <div class="event-details">
+                        <h4>Community Outreach Day</h4>
+                        <span class="time"><i class="fas fa-clock"></i> 10:00 AM - 2:00 PM</span>
+                        <p>Join us as we serve our local community through food distribution, health screenings, and prayer ministry.</p>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="day">05</div>
+                        <div class="month">Aug</div>
+                    </div>
+                    <div class="event-details">
+                        <h4>Baptism Service</h4>
+                        <span class="time"><i class="fas fa-clock"></i> 1:00 PM - 3:00 PM</span>
+                        <p>A special service celebrating new believers making public declarations of their faith through water baptism.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="container">
+        <div class="page-title" id="contact">
+            <h2>Contact Destiny International</h2>
+            <p>We're here to serve you. Whether you're new to our church, looking for prayer, or wanting to get involved, our team is ready to help.</p>
+            <div class="divider"></div>
+        </div>
+
+        <section class="contact-section">
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Albert Kamara" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Kamaraalbert250@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="(+232) 73708080">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" class="form-control" required>
+                            <option value="">Select a subject</option>
+                            <option value="prayer">Prayer Request</option>
+                            <option value="membership">Church Membership</option>
+                            <option value="event">Event Information</option>
+                            <option value="ministry">Ministry Involvement</option>
+                            <option value="donation">Donation Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Our Location</h4>
+                            <p>23a Bass Street, Brookfields, Freetown, Sierra Leone</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+23273708080">(+232) 73708080</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@destinyworship.org">info@destinyworship.org</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Office Hours</h4>
+                            <p>Monday-Friday: 9:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Service Times</h3>
+                    <div class="service-times">
+                        <div class="service-time">
+                            <strong>Sunday Worship</strong>
+                            <span>8:30 AM & 12:00 pm</span>
+                        </div>
+                        <div class="service-time">
+                            <strong>Sunday School</strong>
+                            <span>08:00 AM</span>
+                        </div>
+                        <div class="service-time">
+                            <strong>Youth Service</strong>
+                            <span>Sunday 6:00 PM</span>
+                        </div>
+                        <div class="service-time">
+                            <strong>Prayer Meeting</strong>
+                            <span>Wednesday 7:00 PM</span>
+                        </div>
+                        <div class="service-time">
+                            <strong>Bible Study</strong>
+                            <span>Tuesday 7:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <h3 class="footer-heading">Find Us</h3>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i> &nbsp; Church Location Map
+                </div>
+            </div>
+        </section>
+
+        <!-- Staff Section -->
+        <section class="staff-section">
+            <h3 class="footer-heading">Our Pastoral Team</h3>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <div class="staff-img" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80');"></div>
+                    <div class="staff-info">
+                        <h4>Apostle Olu-Bumie Syl-Macfoy</h4>
+                        <p class="position">Senior Pastor</p>
+                        <p>Leading our congregation with wisdom and compassion since 2010.</p>
+                        <div class="staff-contact">
+                            <a href="mailto:olubumie@destinyworship.org"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+23273708080"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-img" style="background-image: url('https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80');"></div>
+                    <div class="staff-info">
+                        <h4>Rev. Bamie Williams</h4>
+                        <p class="position">Associate Pastor</p>
+                        <p>Oversees our community outreach and youth ministries.</p>
+                        <div class="staff-contact">
+                            <a href="mailto:Bamie@destinyworship.org"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+23273708080"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-img" style="background-image: url('https://images.unsplash.com/photo-1580309237429-661ea7cd1d53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80');"></div>
+                    <div class="staff-info">
+                        <h4>Pastor Donald John</h4>
+                        <p class="position">Worship Director</p>
+                        <p>Leads our worship ministry and creative arts programs.</p>
+                        <div class="staff-contact">
+                            <a href="mailto:donald@destinyworship.org"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+2327370808"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Destiny International</div>
+                    <p>A vibrant community of faith dedicated to serving God and transforming lives through the power of the Gospel.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            
+                
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Newsletter</h3>
+                    <p>Subscribe to receive updates and inspirational messages.</p>
+                    <div class="form-group">
+                        <input type="email" id="newsletter-email" class="form-control" placeholder="Your email address">
+                    </div>
+                    <button id="subscribe-btn" class="submit-btn">Subscribe</button>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Destiny International Worship Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Panel Access -->
+    <div class="admin-panel" id="admin-toggle">
+        <i class="fas fa-user-cog"></i> Admin
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-content" id="admin-panel">
+        <div class="admin-header">
+            <h3>Contact Messages</h3>
+            <div class="close-admin" id="close-admin">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        
+        <div class="admin-messages" id="message-list">
+            <!-- Messages will be loaded here -->
+        </div>
+        
+        <button class="submit-btn" id="clear-messages">Clear All Messages</button>
+    </div>
+
+    <script>
+        // Form handling with localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const adminToggle = document.getElementById('admin-toggle');
+            const adminPanel = document.getElementById('admin-panel');
+            const closeAdmin = document.getElementById('close-admin');
+            const messageList = document.getElementById('message-list');
+            const clearMessagesBtn = document.getElementById('clear-messages');
+            
+            // Load messages from localStorage
+            function loadMessages() {
+                const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+                messageList.innerHTML = '';
+                
+                if (messages.length === 0) {
+                    messageList.innerHTML = '<p>No messages yet.</p>';
+                    return;
+                }
+                
+                messages.forEach((msg, index) => {
+                    const messageItem = document.createElement('div');
+                    messageItem.className = 'message-item';
+                    messageItem.innerHTML = `
+                        <h4>${msg.name}</h4>
+                        <div class="meta">
+                            <span>${msg.email}</span> | 
+                            <span>${msg.phone || 'No phone'}</span> | 
+                            <span>${new Date(msg.timestamp).toLocaleString()}</span>
+                        </div>
+                        <p><strong>Subject:</strong> ${msg.subject}</p>
+                        <p><strong>Message:</strong> ${msg.message}</p>
+                    `;
+                    messageList.appendChild(messageItem);
+                });
+            }
+            
+            // Handle form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                if (!name || !email || !subject || !message) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                const formData = {
+                    name,
+                    email,
+                    phone,
+                    subject,
+                    message,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Save to localStorage
+                let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+                messages.push(formData);
+                localStorage.setItem('contactMessages', JSON.stringify(messages));
+                
+                // Show success message
+                alert('Thank you for your message! We will get back to you soon.');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Reload messages in admin panel if open
+                if (adminPanel.style.display === 'block') {
+                    loadMessages();
+                }
+            });
+            
+            // Admin panel toggle
+            adminToggle.addEventListener('click', function() {
+                adminPanel.style.display = 'block';
+                loadMessages();
+            });
+            
+            closeAdmin.addEventListener('click', function() {
+                adminPanel.style.display = 'none';
+            });
+            
+            // Clear messages
+            clearMessagesBtn.addEventListener('click', function() {
+                if (confirm('Are you sure you want to delete all messages?')) {
+                    localStorage.removeItem('contactMessages');
+                    loadMessages();
+                }
+            });
+            
+            // Newsletter subscription
+            document.getElementById('subscribe-btn').addEventListener('click', function() {
+                const email = document.getElementById('newsletter-email').value;
+                if (email && validateEmail(email)) {
+                    alert('Thank you for subscribing to our newsletter!');
+                    document.getElementById('newsletter-email').value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+            
+            // Email validation helper
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
